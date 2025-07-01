@@ -1,10 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 emailjs.init('service_1sxi4cy');
 
 const Contact = () => {
+  useEffect(() => {
+    // Add Schema Markup for Local Business
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Suraj Website Designer",
+      "description": "Professional freelance website developer in Delhi, specializing in WordPress, eCommerce, and custom web development",
+      "url": "https://surajwebsitedesigner.site",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "New Delhi",
+        "addressCountry": "IN"
+      },
+      "telephone": "+918368893579",
+      "email": "Support@surajwebsitedesigner.site",
+      "priceRange": "$$",
+      "areaServed": ["Delhi", "India", "Worldwide"],
+      "serviceType": ["Web Development", "WordPress Development", "eCommerce Development"]
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(schema);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -68,16 +98,17 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 relative">
+    <section id="contact" className="py-20 relative" itemScope itemType="https://schema.org/ContactPage">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4" itemProp="name">
             <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Let's Work Together
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Ready to bring your ideas to life? Let's discuss your project and create something amazing together.
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto" itemProp="description">
+            Ready to bring your ideas to life? Contact the best freelance website developer in Delhi. 
+            Specializing in WordPress, eCommerce, and custom web development with affordable pricing.
           </p>
         </div>
 
