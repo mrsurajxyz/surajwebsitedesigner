@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Best Freelance Website Developer in Delhi | WordPress & eCommerce Expert | SURAJ WEBSITE DESIGNER</title>
+    
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="Hire an experienced freelance website developer in Delhi, India. Specializing in WordPress, eCommerce, and custom web development. Affordable web design services for startups and businesses with proven portfolio." />
+    
+    <!-- Keywords Meta Tag -->
+    <meta name="keywords" content="freelance website developer Delhi, WordPress freelance developer India, ecommerce website developer, affordable web design services, custom website development freelancer, full stack web developer, website developer for startups, freelance web developer near me" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Best Freelance Website Developer in Delhi | WordPress & eCommerce Expert" />
+    <meta property="og:description" content="Hire an experienced freelance website developer in Delhi, India. Specializing in WordPress, eCommerce, and custom web development." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_IN" />
+    
+    <!-- Additional Meta Tags -->
+    <meta name="author" content="Suraj Website Designer" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://surajwebsitedesigner.site" />
+    
+    <!-- Add popup styles -->
+    <style>
+      .popup-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 999;
+        backdrop-filter: blur(5px);
+      }
+      
+      .popup-content {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1));
+        padding: 2rem;
+        border-radius: 1rem;
+        max-width: 90%;
+        width: 500px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        color: white;
+        text-align: center;
+      }
+
+      .popup-close {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      .popup-close:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    
+    <!-- Add popup HTML -->
+    <div id="welcomePopup" class="popup-overlay">
+      <div class="popup-content">
+        <button class="popup-close" onclick="closePopup()">×</button>
+        <h2 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">Welcome to Suraj Web Hub! 👋</h2>
+        <p style="margin-bottom: 1rem;">Looking for a professional website developer? You're in the right place!</p>
+        <p style="color: #9CA3AF; margin-bottom: 1.5rem;">Get 20% off on your first project when you contact us today.</p>
+        <a href="#contact" 
+           onclick="closePopup()"
+           style="display: inline-block; padding: 0.75rem 1.5rem; background: linear-gradient(to right, #2563EB, #7C3AED); border-radius: 9999px; color: white; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
+          Get Started
+        </a>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Add popup script -->
+    <script>
+      function showPopup() {
+        document.getElementById('welcomePopup').style.display = 'block';
+      }
+
+      function closePopup() {
+        document.getElementById('welcomePopup').style.display = 'none';
+      }
+
+      // Show popup after 3 seconds of page load
+      window.onload = function() {
+        setTimeout(showPopup, 3000);
+      };
+    </script>
+  </body>
+</html>
