@@ -268,6 +268,22 @@
     <script type="module" src="/src/main.tsx"></script>
     
     <!-- Update script section -->
+    <!-- Replace plain email with encoded version -->
+    <script>
+      function decodeEmail(encoded) {
+        return atob(encoded);
+      }
+      
+      window.onload = function() {
+        const encodedEmail = 'U3VwcG9ydEBzdXJhandlYnNpdGVkZXNpZ25lci5zaXRl';
+        const emailElements = document.querySelectorAll('.contact-email');
+        emailElements.forEach(element => {
+          element.href = 'mailto:' + decodeEmail(encodedEmail);
+          element.textContent = decodeEmail(encodedEmail);
+        });
+      }
+    </script>
+    
     <script>
       // Loader functionality
       window.addEventListener('load', function() {

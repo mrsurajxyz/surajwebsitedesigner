@@ -1,0 +1,3 @@
+Type: TXT
+Host: @
+Value: v=spf1 include:_spf.google.com include:_spf.surajwebsitedesigner.site ~all
